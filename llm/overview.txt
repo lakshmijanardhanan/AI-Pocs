@@ -1,1 +1,125 @@
+What are LLMs?
+    - Open Ai's ChatGPT. Examples uses
+        - can translate real time in international events
+        - disaster recovery
+        - aids to research and diagnosis in helathcare
+
+Applications
+    - Content creation - blog posts, creative stories, articles
+    - Translate from one language to another
+    - Answering questions on various topics like math problems
+    - chat bots and virtual assistants, conversations with users
+    - sentiment analysis of a text - cutsomer feedback, tracking public sentiment
+    - generate concise summaries from large texts
+    - content recommendation
+    - generate code snippets, debugging
+    - healthcare - analyzing medical records, suggesting possible diagnosis, staying update with medical research
+    - legal - legal document reviews, help identify relevant info
+    - personalized marketing campaign based on customer preferences
+
+LLMS are breakthrough technology in fields of AI and NLP.
+
+At the heart of ths is deep learning
+Massive innovations triggered by transformer architecture.
+
+Three main features to a LLM that makese them unique:
+- Large compared to other models. Massive in size.
+    - measured by number of parameters
+    - parameters are like instructions and rules that help model to understand and generate language, millions or even billions
+    - the more amount of parameters a model has, the better it can understand and work with language
+    - BERT a LLM developed by Google has 350 million parameters
+    - GPT4 1.76 Trillion parameters
+    - Trained on huge amount of text data
+    - They are trained on tons of books, websites, blogs, social media, how ppl chat with each otehr online, wikepedia, scientific papers
+    - learn patterns, grammar and vocabulary of human language, common sesne
+- General purpose
+    - trained on wide variety of text
+    - not specialized, multi talented
+    - general understanding on how language works
+    - they can be later fined tuned later to specific tasks and industries
+- Can be pretrained and fine tuned
+    - pretrained to solve variety of language problems by exposing them to massive amounts of text in internet
+    - customized for paths, like medical questions, customer service.
+    - in this phase it gets better with the specific tasks via fine-tuning
+    - few shot - using minimal data to train the model
+    - zero shot - model can recognize things that it has not been explicilty trained on before.
+
+ Tranformer Architecture
+    - A type of neural network Developed by Google Brain researchers in 2017
+    - subset of deep learning, excels in finding complex patterns in data due to its neural netwrk structures
+    - input data ( image or text) goes into the input layers, processed through hidden layers of interconnected neurons forming neural network and comes out through the output layer. 
+    - Each neuwon applies a mathemical operation called the activation function. The stregth of connections netween the neurons are called weights
+    - The weights are continually updated during training phase to minimize difference between predicted and actual output. Iteratively and through vast data processing, it makes increasingly accurate predictions/classifications.
+
+CNN mimics how human brain processes vision -analyzing images and video
+
+Recurrent Neural Network before transformers
+    -sequential give output one word at a time in say translation. sequential aspect of the process important for meaning and context with word order
+    -struggled with long essays, towards the end they forgot what the text said in the beginning, lost context
+    - RNNS couldnt parallelize well, they coulndt pass important pieces of between paralle processes
+    - training took very long, limited the training dataset
+    - for the models to work effectively, they need to have some sort of memory of what was said in the beginning
+    - this is where transformers come in - they parallelize, they pay attention to the most important words in the text required for context giving them superior understanding of the context
+
+Attention is all you need
+    - In 2017, paper released where Google researchers introduced the Transformer architecture with the attention mechanism that formed the fundamental part of the llms.
+    - The attention mechanism enables a model to weigh the importance of different words or tokens in an input sequence when producing an output.
+    - instead of processing the tokens sequential, the model assigns a weight or attention score to each token in input sequence which indicates its importance. model uses a wieghted sum of these scores to generate output and uses for long range dependecies in data. For ex in language transation,doing it each token at a time in a fixed order will not work.
+    - Self attention computes relationships between input sequence, for deeper contextual info.
+
+Transformer Architecture
+    - Feed all words at once to the transformer model. It processes it using the encoder decoder architecture.
+    - First step in the transformer architecture is to create the input embedding. we cant feed text into model, it should be numerical
+        -Breakdown input text into tokens. tokens are words or char or subwords depending on the tokenization strategy used.
+        -Each token is mapped to a unique identifying number based on a predefined vocabulary. This vocabulary is filled from a large corpus of text that contains all the tokens the model can recognize
+        -model retrieves pre-trained word embedding word from embedding matrix. The embedding matrix contains vector representations / word emnbddings of all tokens in the vocab. These embeddings have semantic and syntactic info about the tokens. Words that are similar to one another in meaning are mapped close to one another in the vector space. Same word can have different meanings depending on how it is used in sentence. Positional encoding is a number recording position of the token in a sentence. this keeps infor on order of words in input sequence. Padding or truncation applied to make sure all input sequences have same length.
+
+One we have the input embedding and the positional embeddings, the data are then fed to the encoder block of the transformer
+
+Encoder block has a multi headed attention layer and feed forward layer 
+    Multi Headed attention layer
+    - Allows the model to weigh the importance of different tokens
+    - Give us attention vectors that capture contextual information between every token in the text
+    - Steps to calculate the attention vector
+        - For each token in the input sequence we create three vectors:
+                - Query vector - represents the tokens own question about other tokens in the seqeuence. In other words, how much should i pay attention to other tokens in the sequence. Ex: "it" in a sentence. what is it referring to? currently attended to in the input sequence. There is a query vector for each token in the input sequence.
+                - Key vectors - hold information about all the other tokens in the sequence. Each key vector corresponds to a different token and contains information. helps determine how much attention should be give to the token.
+                - Value vectors - associated with each token in the input sequence, container of information including the value and the knowledge about every token. When query vector ( which is the current token being attended to ) asks questions about other tokens, the value vectors provide the answers. The values for these different vectors are what is learned through training our model
+        - Next step, caculate the similarities between each query vectors and all key vectors using dot product which produces a similarity score, one for each token in the sentence indicating how much attention should be paid to each token from the currently attended to query token. To ensure numerical stability, the similarity scores are scaled by dividing them by square root of the dimension of the key vectors. This scaling factor helps control the magnitude of the scores.
+        - Next appapply softmax function to the scaled similarity function to obatin the attention weight. The softmax function normalizes the scores so they sum up to one effectively turning them into probabilities. Now we have an attention weight for each token in the sequence indicating how much attention the query token should give to each other token
+        - Then caculate the weighted sum of the value vectors using the attention weights. This step aggregatres info from the entire input sequence giving more importance to tokens with higher attention weight. The resulting attention vector represents combined info from the input sequence focusing on relevant tokens based on attention mechanism. 
+        - Transformers will try multiple iterations of query, key and value projections known as heads. Each head learns a different set of weigths allowing the model to focus on different patterns or aspects of the data. The attention vectors from each head are concatenated and transformed to produce the final output of this layer. 
+    
+        
+Feed Forward Layer
+    - The output from the multi headed layer is passed to the feedforward layer that aims to model complex relationships within the input sequence.
+    - It processes and tranforms information captured during the self attention mechanism
+    - To begin with, We have a set of context aware representaion of each token in the input sequence. Each of this reperesentation contains information on how the token relates to the other tokens.
+    - The first step is a linear transformation for each tokens representation. This means that a learned weight matrix is applied to each token essentially reshaping and projectinng into a new space potentailly with a higher dimension followed by an activation function which introduces non-linearity into the model
+    - Another linear transformation is then applied projecting and reshaping the data further often reducing dimensionality - compression or simplification of the information. The output is the final representation for the token designed to capture complex relationships learned in the feedforward step
+    - In summary, feed forward layer acts as a set of neural netwrok operations applied independently to eah tokens representation. They can be run in paraller.
+
+Decoder Block
+    - The desired output we want the model to learn is fed into our decoder block.
+    - In the example of French to English translation, the French words are fed to the encoder block and English words to the decoder block aka the desired output we want the model to learn.
+    - These outputs go through similar embeddings and positional encoding before being fed to the decoder block. Hoever we dont feed all the encodings to the decoder block at once. They go through the masked multiheaded attention layer as some info is hidden to make the model learn.
+    - In the encoder block, we allow the model to see all the attention vectors for the French words
+    - But in the decoder block, we only see the English words attention vectors that have come before the currently attented to word in the sentence. The model then has to learn what the next word in the sentence should be - hence "masked"
+
+Predicting the Final output
+    The multi headed attention layer in the decoder block receives input from both the multi headed attention layer of the encoder block and the masked multi headed attention layer of the decoded block.  Here the attention scores between the current output token and the encoder outputs are calculated. This helps the model determine which parts of the input sequence are relevant when generating the next token for the output. The encoder outputs are weighted by these attention scores to create a context vector. Context vector represents the relevant info that should be  considred when generating the current output token. Feed forward layer makes it more digetible. Linear is a feed forward neural network used to manipulate the output and softmax translates it to probability distibution that helps predict the next word in output sequence. This process is repeated for each word in sequence and each step includes the previosly generated token in the subsequenct steps.
+
+
+ChatGpt
+    - Generative pretrained transformer
+    - can generate human like text in coherent and contextually appropriate manner
+    - transformer architecture
+    - trained on massive data
+    - GPT-1 in 2018 by OpenAI
+    - GPT-2 in 2019 - large 1.5 billion parameters at scale
+    - GPT-3 175 2020 billion parameters, trained on most of internet
+    - GPT-3.5 2022
+    - GPT-4  2023 1 Trillion parameters
+    - API available to interact with their model
+
 
