@@ -1,0 +1,407 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Bundle xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns0="http://hl7.org/fhir"><ns0:type value="transaction" />
+  <ns0:entry><ns0:resource><ns0:Patient><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-1032702" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div><html:p>
+              Amy Shaw
+            </html:p>
+          </html:div>
+        </ns0:text>
+        <ns0:identifier><ns0:use value="usual" />
+          <ns0:type><ns0:coding><ns0:system value="http://hl7.org/fhir/v2/0203" />
+              <ns0:code value="MR" />
+              <ns0:display value="Medical record number" />
+            </ns0:coding>
+            <ns0:text value="Medical record number" />
+          </ns0:type>
+          <ns0:system value="http://hospital.smarthealthit.org" />
+          <ns0:value value="1032702" />
+        </ns0:identifier>
+        <ns0:name><ns0:use value="official" />
+          <ns0:family value="Shaw" />
+          <ns0:given value="Amy" />
+          <ns0:given value="V." />
+        </ns0:name>
+        <ns0:telecom><ns0:system value="phone" />
+          <ns0:value value="800-782-6765" />
+          <ns0:use value="mobile" />
+        </ns0:telecom>
+        <ns0:telecom><ns0:system value="email" />
+          <ns0:value value="amy.shaw@example.com" />
+        </ns0:telecom>
+        <ns0:gender value="female" />
+        <ns0:birthDate value="2010-11-11" />
+        <ns0:address><ns0:use value="home" />
+          <ns0:line value="49 Meadow St" />
+          <ns0:city value="Mounds" />
+          <ns0:state value="OK" />
+          <ns0:postalCode value="74047" />
+          <ns0:country value="USA" />
+        </ns0:address>
+        <ns0:active value="true" />
+      </ns0:Patient>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Patient/smart-1032702" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:MedicationOrder><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-MedicationOrder-101" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Nizatidine 15 MG/ML Oral Solution [Axid] (rxnorm: 582620)
+          </html:div>
+        </ns0:text>
+        <ns0:status value="active" />
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:medicationCodeableConcept><ns0:coding><ns0:system value="http://www.nlm.nih.gov/research/umls/rxnorm" />
+            <ns0:code value="582620" />
+            <ns0:display value="Nizatidine 15 MG/ML Oral Solution [Axid]" />
+          </ns0:coding>
+          <ns0:text value="Nizatidine 15 MG/ML Oral Solution [Axid]" />
+        </ns0:medicationCodeableConcept>
+        <ns0:dosageInstruction><ns0:timing><ns0:repeat><ns0:boundsPeriod><ns0:start value="2008-04-05" />
+              </ns0:boundsPeriod>
+              <ns0:frequency value="2" />
+              <ns0:period value="1" />
+              <ns0:periodUnits value="d" />
+            </ns0:repeat>
+          </ns0:timing>
+          <ns0:doseQuantity><ns0:value value="10" />
+            <ns0:unit value="mL" />
+            <ns0:system value="http://unitsofmeasure.org" />
+            <ns0:code value="mL" />
+          </ns0:doseQuantity>
+          <ns0:text value="10 mL bid" />
+        </ns0:dosageInstruction>
+        <ns0:dispenseRequest><ns0:numberOfRepeatsAllowed value="1" />
+          <ns0:quantity><ns0:value value="1" />
+            <ns0:unit value="mL" />
+            <ns0:system value="http://unitsofmeasure.org" />
+            <ns0:code value="mL" />
+          </ns0:quantity>
+          <ns0:expectedSupplyDuration><ns0:value value="30" />
+            <ns0:unit value="days" />
+            <ns0:system value="http://unitsofmeasure.org" />
+            <ns0:code value="d" />
+          </ns0:expectedSupplyDuration>
+        </ns0:dispenseRequest>
+      </ns0:MedicationOrder>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="MedicationOrder/smart-MedicationOrder-101" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Condition><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Condition-119" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Single liveborn, born in hospital, delivered without mention of cesarean section
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:code><ns0:coding><ns0:system value="http://snomed.info/sct" />
+            <ns0:code value="442311008" />
+            <ns0:display value="Single liveborn, born in hospital, delivered without mention of cesarean section" />
+          </ns0:coding>
+          <ns0:text value="Single liveborn, born in hospital, delivered without mention of cesarean section" />
+        </ns0:code>
+        <ns0:clinicalStatus value="active" />
+        <ns0:verificationStatus value="confirmed" />
+        <ns0:onsetDateTime value="2011-08-07" />
+      </ns0:Condition>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Condition/smart-Condition-119" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Condition><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Condition-120" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Abnormal weight loss
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:code><ns0:coding><ns0:system value="http://snomed.info/sct" />
+            <ns0:code value="267024001" />
+            <ns0:display value="Abnormal weight loss" />
+          </ns0:coding>
+          <ns0:text value="Abnormal weight loss" />
+        </ns0:code>
+        <ns0:clinicalStatus value="active" />
+        <ns0:verificationStatus value="confirmed" />
+        <ns0:onsetDateTime value="2011-08-12" />
+      </ns0:Condition>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Condition/smart-Condition-120" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Condition><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Condition-121" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Follow-up encounter
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:code><ns0:coding><ns0:system value="http://snomed.info/sct" />
+            <ns0:code value="310249008" />
+            <ns0:display value="Follow-up encounter" />
+          </ns0:coding>
+          <ns0:text value="Follow-up encounter" />
+        </ns0:code>
+        <ns0:clinicalStatus value="active" />
+        <ns0:verificationStatus value="confirmed" />
+        <ns0:onsetDateTime value="2011-08-12" />
+      </ns0:Condition>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Condition/smart-Condition-121" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Condition><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Condition-122" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Gastroesophageal reflux disease
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:code><ns0:coding><ns0:system value="http://snomed.info/sct" />
+            <ns0:code value="235595009" />
+            <ns0:display value="Gastroesophageal reflux disease" />
+          </ns0:coding>
+          <ns0:text value="Gastroesophageal reflux disease" />
+        </ns0:code>
+        <ns0:clinicalStatus value="active" />
+        <ns0:verificationStatus value="confirmed" />
+        <ns0:onsetDateTime value="2011-11-26" />
+      </ns0:Condition>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Condition/smart-Condition-122" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Condition><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Condition-123" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Needs influenza immunization
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:code><ns0:coding><ns0:system value="http://snomed.info/sct" />
+            <ns0:code value="185903001" />
+            <ns0:display value="Needs influenza immunization" />
+          </ns0:coding>
+          <ns0:text value="Needs influenza immunization" />
+        </ns0:code>
+        <ns0:clinicalStatus value="active" />
+        <ns0:verificationStatus value="confirmed" />
+        <ns0:onsetDateTime value="2012-02-21" />
+      </ns0:Condition>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Condition/smart-Condition-123" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Immunization><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Immunization-1" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            DTaP-hepatitis B and poliovirus vaccine
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:date value="2007-09-27" />
+        <ns0:vaccineCode><ns0:coding><ns0:system value="http://www2a.cdc.gov/vaccines/IIS/IISStandards/vaccines.asp?rpt=cvx" />
+            <ns0:code value="110" />
+            <ns0:display value="DTaP-hepatitis B and poliovirus vaccine" />
+          </ns0:coding>
+        </ns0:vaccineCode>
+        <ns0:reported value="false" />
+        <ns0:wasNotGiven value="false" />
+      </ns0:Immunization>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Immunization/smart-Immunization-1" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Immunization><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Immunization-2" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            poliovirus vaccine, unspecified formulation
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:date value="2011-01-27" />
+        <ns0:vaccineCode><ns0:coding><ns0:system value="http://www2a.cdc.gov/vaccines/IIS/IISStandards/vaccines.asp?rpt=cvx" />
+            <ns0:code value="89" />
+            <ns0:display value="poliovirus vaccine, unspecified formulation" />
+          </ns0:coding>
+        </ns0:vaccineCode>
+        <ns0:reported value="false" />
+        <ns0:wasNotGiven value="false" />
+      </ns0:Immunization>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Immunization/smart-Immunization-2" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Immunization><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Immunization-3" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            poliovirus vaccine, unspecified formulation
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:date value="2011-05-27" />
+        <ns0:vaccineCode><ns0:coding><ns0:system value="http://www2a.cdc.gov/vaccines/IIS/IISStandards/vaccines.asp?rpt=cvx" />
+            <ns0:code value="89" />
+            <ns0:display value="poliovirus vaccine, unspecified formulation" />
+          </ns0:coding>
+        </ns0:vaccineCode>
+        <ns0:reported value="false" />
+        <ns0:wasNotGiven value="false" />
+      </ns0:Immunization>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Immunization/smart-Immunization-3" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Immunization><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-Immunization-4" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            rotavirus, live, pentavalent vaccine
+          </html:div>
+        </ns0:text>
+        <ns0:patient><ns0:reference value="Patient/smart-1032702" />
+        </ns0:patient>
+        <ns0:date value="2007-05-24" />
+        <ns0:vaccineCode><ns0:coding><ns0:system value="http://www2a.cdc.gov/vaccines/IIS/IISStandards/vaccines.asp?rpt=cvx" />
+            <ns0:code value="116" />
+            <ns0:display value="rotavirus, live, pentavalent vaccine" />
+          </ns0:coding>
+        </ns0:vaccineCode>
+        <ns0:reported value="false" />
+        <ns0:wasNotGiven value="false" />
+      </ns0:Immunization>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Immunization/smart-Immunization-4" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:Observation><ns0:id value="smart-Observation-5-smokingstatus" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            Tobacco smoking status: Current some day smoker
+          </html:div>
+        </ns0:text>
+        <ns0:category><ns0:coding><ns0:system value="http://hl7.org/fhir/observation-category" />
+            <ns0:code value="social-history" />
+            <ns0:display value="Social History" />
+          </ns0:coding>
+          <ns0:text value="Social History" />
+        </ns0:category>
+        <ns0:code><ns0:coding><ns0:system value="http://loinc.org" />
+            <ns0:code value="72166-2" />
+            <ns0:display value="Tobacco smoking status" />
+          </ns0:coding>
+          <ns0:text value="Tobacco smoking status" />
+        </ns0:code>
+        <ns0:valueCodeableConcept><ns0:coding><ns0:system value="http://snomed.info/sct" />
+            <ns0:code value="428041000124106" />
+            <ns0:display value="Current some day smoker" />
+          </ns0:coding>
+          <ns0:text value="Current some day smoker" />
+        </ns0:valueCodeableConcept>
+        <ns0:status value="final" />
+        <ns0:subject><ns0:reference value="Patient/smart-1032702" />
+        </ns0:subject>
+      </ns0:Observation>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="Observation/smart-Observation-5-smokingstatus" />
+    </ns0:request>
+  </ns0:entry>
+  <ns0:entry><ns0:resource><ns0:List><ns0:meta><ns0:tag><ns0:system value="https://smarthealthit.org/tags" />
+            <ns0:code value="smart-8-2017" />
+          </ns0:tag>
+        </ns0:meta>
+        <ns0:id value="smart-List-19" />
+        <ns0:text><ns0:status value="generated" />
+          <html:div>
+            No known allergies
+          </html:div>
+        </ns0:text>
+        <ns0:code><ns0:coding><ns0:system value="http://loinc.org/" />
+            <ns0:code value="52473-6" />
+            <ns0:display value="Allergy" />
+          </ns0:coding>
+          <ns0:text value="Allergy" />
+        </ns0:code>
+        <ns0:subject><ns0:reference value="Patient/smart-1032702" />
+        </ns0:subject>
+        <ns0:date value="2000" />
+        <ns0:mode value="snapshot" />
+        <ns0:emptyReason><ns0:coding><ns0:system value="http://hl7.org/fhir/list-empty-reason" />
+            <ns0:code value="nilknown" />
+            <ns0:display value="Nil Known" />
+          </ns0:coding>
+          <ns0:text value="Nil Known" />
+        </ns0:emptyReason>
+      </ns0:List>
+    </ns0:resource>
+    <ns0:request><ns0:method value="PUT" />
+      <ns0:url value="List/smart-List-19" />
+    </ns0:request>
+  </ns0:entry>
+</ns0:Bundle>
